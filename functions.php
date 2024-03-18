@@ -16,6 +16,7 @@ add_action('wp_enqueue_scripts', 'remove_jquery');
 
 function add_styling(){
   wp_enqueue_style( 'style', get_stylesheet_uri() );
+  // wp_enqueue_style( 'style', get_stylesheet_uri()  );
 }
 add_action('wp_enqueue_scripts', 'add_styling');
 
