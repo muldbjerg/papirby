@@ -17,6 +17,7 @@
 /wp-*.php
 /xmlrpc.php
 *.DS_Store
+/node_modules
 
 # Configuration
 wp-config.php
