@@ -1,0 +1,228 @@
+/* PAGE: BLIV SPEJDER */
+
+/* --- Header ---- */
+
+.bliv-spejder-header {
+  text-align: center;
+
+  h1 {
+    line-height: 1.2;
+    color: #01472c;
+    font-family: var(--font-fancy);
+
+    font-size: clamp(2.5rem, 6vw, 10rem);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    padding-top: 80px;
+    font-size: clamp(1.25rem, 1.5vw, 4rem);
+  }
+
+  .bliv-spejder-scarf {
+    position: absolute;
+    right: 0;
+    top: -60px;
+    width: 300px;
+    mix-blend-mode: multiply;
+  }
+}
+
+.bliv-spejder-page-content {
+  text-align: center;
+  margin-top: 160px;
+
+  .wp-block-columns {
+    .wp-block-column {
+      background-color: #fff;
+      border-radius: 40px;
+      padding: 32px;
+
+      .wp-block-buttons {
+        justify-content: center;
+      }
+
+      h3 {
+        font-family: var(--font-fancy);
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      .step {
+        display: flex;
+        background-color: #01472c;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+
+        mask-image: var(--blob-svg);
+        mask-size: 100%;
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+    }
+  }
+}
+
+.bliv-spejder-enheds-filtre {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  text-align: center;
+
+  & > div {
+    @media (hover: hover) {
+      &:hover button {
+        opacity: 0.4;
+      }
+    }
+
+    &:has(button.active) button:not(.active) {
+      opacity: 0.4;
+    }
+
+    button {
+      font-family: var(--font-condensed);
+      font-weight: 500;
+      font-size: 2rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 0 16px;
+      text-transform: uppercase;
+      color: var(--dark-green);
+
+      .kerning {
+        letter-spacing: -3px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+#bliv-spejder-enheds-oversigt-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+  margin-top: 160px;
+}
+
+.bliv-spejder-enheds-oversigt-photo-credits {
+  font-size: 1rem;
+
+  .foto-credit {
+    &:not(:last-of-type)::after {
+      content: ", ";
+    }
+  }
+}
+
+// ENHEDS CARD
+
+.enheds-card {
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+
+  .enheds-card-info {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 24px;
+    color: #fff;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(112, 112, 112, 0.5) 100%
+    );
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    border-radius: 0 0 24px 24px;
+
+    h2 {
+      margin: 0px;
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 4px 0 0;
+      font-size: 1rem;
+    }
+
+    .enheds-card-info-sub {
+      display: flex;
+      flex-direction: row;
+
+      p:first-of-type {
+        flex-grow: 4;
+      }
+    }
+  }
+}
+
+.bliv-spejder-enheds-oversigt-photo-credits {
+  margin-top: 40px;
+  text-align: center;
+  opacity: 0.4;
+}
+
+@media only screen and (max-width: 1200px) {
+  #bliv-spejder-enheds-oversigt-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .bliv-spejder-header {
+    .bliv-spejder-scarf {
+      width: 150px;
+    }
+  }
+
+  .enheds-card {
+    .enheds-card-info {
+      .enheds-card-info-sub {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #bliv-spejder-enheds-oversigt-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Frame 52 */
+
+/* Auto layout */
+// display: flex;
+// flex-direction: column;
+// align-items: flex-start;
+// padding: 19.1403px;
+// gap: 10.85px;
+
+// position: absolute;
+// width: 338.14px;
+// height: 94.13px;
+// left: calc(50% - 338.14px/2);
+// top: 329.21px;
+
+// background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(112, 112, 112, 0.5) 100%);
+// backdrop-filter: blur(5.10407px);
+/* Note: backdrop-filter has minimal browser support */

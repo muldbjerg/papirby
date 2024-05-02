@@ -1,0 +1,132 @@
+h1.nyheds-page {
+  color: var(--main-green);
+  font-family: var(--font-fancy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 180px;
+  font-size: clamp(2rem, 3vw, 6rem);
+}
+
+.nyheds-posts {
+  max-width: 1000px;
+  margin: 100px auto 0;
+
+  .post {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 42px;
+    padding: 40px 0;
+    color: var(--main-text-color);
+    transition: var(--standard-transition);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .post-thumbnail img {
+          transform: scale(1.025);
+        }
+      }
+    }
+
+    .post-thumbnail {
+      width: 300px;
+      object-fit: cover;
+
+      img {
+        border-radius: 16px;
+        transition: var(--standard-transition);
+      }
+    }
+
+    .post-content {
+      overflow: auto;
+
+      h2 {
+        margin: 0;
+        line-height: 1.1;
+      }
+
+      .post-meta-data {
+        font-family: var(--font-condensed);
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin: 8px 0 0;
+      }
+    }
+  }
+}
+
+.nyheds-posts-pagination {
+  .nav-links {
+    justify-content: center;
+    display: flex;
+    margin-top: 120px;
+    flex-wrap: wrap;
+
+    .page-numbers {
+      padding: 8px 16px;
+      border-radius: 8px;
+      color: var(--main-text-color);
+
+      @media (hover: hover) {
+        &:hover:not(span) {
+          color: var(--main-green);
+        }
+      }
+
+      &.current {
+        background-color: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+
+      &.next,
+      &.prev {
+        font-family: var(--font-condensed);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .nyheds-posts {
+    .post {
+      .post-thumbnail {
+        width: 120px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .nyheds-posts {
+    .post {
+      grid-template-columns: 1fr;
+
+      .post-thumbnail {
+        width: auto;
+      }
+    }
+  }
+
+  .nyheds-posts-pagination {
+    .nav-links {
+      .page-numbers {
+        &.next,
+        &.prev {
+          width: 100%;
+          text-align: center;
+          padding: 16px 0;
+          margin: 16px 0;
+        }
+      }
+    }
+  }
+}

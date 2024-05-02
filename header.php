@@ -72,21 +72,15 @@
 	<script>
 		(function(){
 			setTimeout(() => {
-				// var mobileButton = window.getComputedStyle('.main-nav', ':after');
-
 				var mobileButton = document.querySelector('.main-nav')
-				// var myPseudoElement = window.getComputedStyle(mobileButton, ':after')
 				mobileButton.addEventListener('click', function(){
 					mobileButton.classList.toggle('open');
-				})
+				});
+
+			}, 100);
 
 
-				// var mobileButton = document.querySelector('.main-nav::after');
-				// console.log(mobileButton);
-				// document.querySelector('.main-nav::after').addEventListener("click", function() {
-				// 	console.log("hallo")
-				// });
-			
-			}, 200);
 		})();
+
+
 	</script>

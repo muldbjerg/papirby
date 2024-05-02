@@ -1,0 +1,21 @@
+/* 
+Theme Name: Papirby
+Version: 0.0.1 
+Description: Tema udviklet specielt til Silkeborg KFUM Spejder gruppe. 
+Author: Steffen Muldjerg
+Author URI: https://muldbjerg.com
+Template: storefront 
+*/
+
+@import "reset";
+@import "fonts";
+@import "general";
+@import "header";
+@import "footer";
+
+// templates
+@import "forside";
+@import "blivspejder";
+@import "nyheder";
+@import "single";
+@import "map";
