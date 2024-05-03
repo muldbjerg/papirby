@@ -41,67 +41,160 @@ function home_body_class($classes) {
 add_filter( 'body_class', 'home_body_class' );
 
 
-function create_posttype() {
-  
-    register_post_type( 'enheder',
-    // CPT Options
-        array(
-          'labels' => array(
-            'name' => __( 'Enheder' ),
-            'singular_name' => __( 'Enhed' ),
-            'add_new_item' => __( 'Add New Enhed' ),
-            'edit_item' => __( 'Edit Enhed' ),
-            'update_item' => __( 'Update Enhed' ),
-            'search_items' => __( 'Search Enhed' ),
-          ),
-          'public' => true,
-          'has_archive' => false,
-          'rewrite' => array('slug' => 'enheder'),
-          'show_in_rest' => true,
-			    'taxonomies' => array( 'afdeling' ),
-          'hierarchical' => true,
-          'supports' => array('title', 'editor', 'page-attributes')
-        )
-    );
-}
-// Hooking up our function to theme setup
-add_action( 'init', 'create_posttype' );
-
-function add_custom_taxonomies() {
-  // Add new "Locations" taxonomy to Posts
-  register_taxonomy('afdelinger', array('post', 'enheder'), array(
-    // Hierarchical taxonomy (like categories)
-    'hierarchical' => true,
-    // This array of options controls the labels displayed in the WordPress Admin UI
-    'labels' => array(
-      'name' => _x( 'Afdelinger', 'taxonomy general name' ),
-      'singular_name' => _x( 'Afdeling', 'taxonomy singular name' ),
-      'search_items' =>  __( 'Search afdelinger' ),
-      'all_items' => __( 'All afdelinger' ),
-      'parent_item' => __( 'Parent afdeling' ),
-      'parent_item_colon' => __( 'Parent afdeling:' ),
-      'edit_item' => __( 'Edit afdeling' ),
-      'update_item' => __( 'Update afdeling' ),
-      'add_new_item' => __( 'Add New afdeling' ),
-      'new_item_name' => __( 'New afdeling Name' ),
-      'menu_name' => __( 'Afdelinger' ),
-    ),
-    // Control the slugs used for this taxonomy
-    'rewrite' => array(
-      'slug' => 'afdel', // This controls the base slug that will display before each term
-      'with_front' => false, // Don't display the category base before "/locations/"
-      'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
-    ),
-  ));
-}
-add_action( 'init', 'add_custom_taxonomies', 0 );
-
-
-
 add_action( 'acf/include_fields', function() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
 	}
+
+	acf_add_local_field_group( array(
+	'key' => 'group_661837eaae44c',
+	'title' => 'Enheder',
+	'fields' => array(
+		array(
+			'key' => 'field_661837ebea15e',
+			'label' => 'Aldersgruppe',
+			'name' => 'aldersgruppe',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_66183824ea15f',
+			'label' => 'Mødetidspunkt',
+			'name' => 'modetidspunkt',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_6618387706b30',
+			'label' => 'Enheds billed',
+			'name' => 'enheds_billed',
+			'aria-label' => '',
+			'type' => 'image',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+			'preview_size' => 'medium',
+		),
+		array(
+			'key' => 'field_661839273eb69',
+			'label' => 'Billed kredit',
+			'name' => 'enheds_billed_kredit',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_66183839ea160',
+			'label' => 'Enhedsleder',
+			'name' => 'enhedsleder',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+		array(
+			'key' => 'field_66183845ea161',
+			'label' => 'Enhedsleder mail',
+			'name' => 'enhedsleder_mail',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'enheder',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
 
 	acf_add_local_field_group( array(
 	'key' => 'group_661835bc5e2a4',
@@ -163,11 +256,58 @@ add_action( 'acf/include_fields', function() {
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
+	'active' => false,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
+	'key' => 'group_66280745cb441',
+	'title' => 'Nyheder',
+	'fields' => array(
+		array(
+			'key' => 'field_662807464883d',
+			'label' => 'Forside teaser',
+			'name' => 'forside_teaser',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
-  ) );
+) );
 } );
+
+
 
 
 
