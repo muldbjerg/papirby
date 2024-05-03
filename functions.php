@@ -100,11 +100,10 @@ add_action( 'init', 'add_custom_taxonomies', 0 );
 
 
 // ADVANCHED CUSTOM FIELDS
-include_once('acf_fields.php');
+// include_once('acf_fields.php');
 
 
 function my_acf_add_local_field_groups() {
-    
     acf_add_local_field_group( array(
       'key' => 'group_661837eaae44c',
       'title' => 'Enheder',
@@ -363,8 +362,7 @@ function my_acf_add_local_field_groups() {
       'active' => true,
       'description' => '',
       'show_in_rest' => 0,
-    ) );
-    
+    ) );   
 }
 
 add_action('acf/init', 'my_acf_add_local_field_groups');
