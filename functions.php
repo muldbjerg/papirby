@@ -100,7 +100,7 @@ add_action( 'init', 'add_custom_taxonomies', 0 );
 
 
 // ADVANCHED CUSTOM FIELDS
-include_once('my_acf_fields.php');
+include_once('acf_fields.php');
 
 
 
