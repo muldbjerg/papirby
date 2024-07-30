@@ -115,7 +115,7 @@
   color: var(--main-green);
   font-family: var(--font-fancy);
 
-  font-size: clamp(1rem, 4vw, 5rem);
+  font-size: clamp(2rem, 4vw, 5rem);
   margin: 0;
 }
 
@@ -137,6 +137,7 @@
 
   .btn-primary {
     padding: 16px 32px;
+    font-size: 1.5rem;
   }
 }
 
@@ -148,8 +149,7 @@
   h2 {
     font-family: var(--font-fancy);
     text-align: center;
-    font-size: 3rem;
-    font-size: clamp(1rem, 4vw, 5rem);
+    font-size: clamp(1.75rem, 4vw, 5rem);
     margin: 0px;
     line-height: 1.1;
     color: var(--main-green);
@@ -160,14 +160,13 @@
     max-width: 900px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    column-gap: 60px;
     margin: 24px auto -240px;
     z-index: 1;
   }
 }
 
 .about-group-map {
-  // position: relative;
   max-width: 85%;
   margin: 0 auto;
 }
@@ -203,6 +202,12 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
   margin-top: 40px;
+
+  @media (hover: hover) {
+    a:hover {
+      text-decoration: none;
+    }
+  }
 
   .forside-nyheder-post-card {
     .thumbnail {
@@ -270,21 +275,95 @@
         .thumbnail {
           transform: translateY(-8px);
         }
+
         h3 {
           opacity: 0.8;
         }
 
         .forside-nyheder-post-card-read-more {
           color: var(--main-green);
+          opacity: 1;
         }
       }
     }
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .hero-spot-image {
+    position: relative;
+
+    .caption {
+      position: absolute;
+      bottom: 0vw;
+    }
+  }
+}
+
 @media only screen and (max-width: 900px) {
+  .hero-spot {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .hero-spot-text {
+    h1 {
+      margin: 30px 0 0;
+    }
+
+    p {
+      width: 80%;
+    }
+  }
+
+  .hero-spot-image {
+    width: 85%;
+    margin-top: 80px;
+    margin-top: 18vw;
+
+    .caption {
+      width: 100%;
+      bottom: -12vw;
+      color: #000;
+    }
+  }
+
+  .hero-spot-image .blob {
+    bottom: -10vw;
+    width: 16vw;
+  }
+
+  .hero-spot-image .blob.two {
+    bottom: -2vw;
+    right: -20px;
+    width: 20vw;
+  }
+
+  .hero-spot-image .blob.three {
+    top: -88vw;
+    right: -6vw;
+    width: 16vw;
+  }
+
+  .about-group {
+    margin-top: 180px;
+
+    .about-group-text {
+      grid-template-columns: 1fr;
+      margin-bottom: 0px;
+    }
+  }
+
   .forside-nyheder-posts {
     grid-template-columns: 1fr 1fr;
     row-gap: 42px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .hero-spot-image {
+    .caption {
+      bottom: -8vw;
+    }
   }
 }

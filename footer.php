@@ -17,8 +17,8 @@
                         <path d="M33.3834 24.6399C33.3834 23.6573 32.9109 22.7869 32.1827 22.2371C33.6729 19.5591 37.9992 18.4751 41.1127 21.0137C37.9858 24.2149 35.7451 28.4051 34.5124 32.4414C33.291 31.9188 31.1826 29.948 31.166 27.5435C32.4433 27.194 33.3834 26.0283 33.3834 24.6399Z" fill="#fff"/>
                         <path d="M23.9171 0.000304992C22.0514 4.74088 22.9285 13.4015 23.7451 22.2422H24.0902C24.9065 13.4015 25.7834 4.74088 23.9171 0.000304992Z" fill="#fff"/>
                     </svg>
-                    <p class="footer_title">Silkeborg Spejderne</p>
-                    <p class="footer_subtitle">Oplevelser, udfordringer og venner i naturen</p>
+                    <p class="footer_title"><?php echo bloginfo('title'); ?></p>
+                    <p class="footer_subtitle"><?php echo bloginfo('description'); ?></p>
                 </div>
 
                 <div class="footer-nav">
@@ -46,39 +46,3 @@
             </div>
         </div>
     </footer>
-<!-- 
-<style>
-    footer{
-        padding: 20vw 0 4vw;
-        font-size: 1rem;
-        color: #A4927C;
-    }
-
-    footer p{
-        margin: 4px 0;
-    }
-
-    footer p:first-of-type{
-        font-weight: 600;
-    }
-
-    footer a, footer a:visited{
-        display: inline-block;
-        margin-right: 16px;
-        color: #A4927C;
-        transition: color 0.1s ease;
-    }
-
-    @media(hover: hover){
-         footer a:hover{
-            color: var(--main-text-color);
-         }
-    }
-
-    
-    @media only screen and (max-width: 960px) {
-        footer{
-            text-align: center;
-        }
-    }
-</style> -->

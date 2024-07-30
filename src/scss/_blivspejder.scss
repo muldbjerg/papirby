@@ -152,6 +152,7 @@
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
     border-radius: 0 0 24px 24px;
+    transition: var(--standard-transition);
 
     h2 {
       margin: 0px;
@@ -169,6 +170,14 @@
 
       p:first-of-type {
         flex-grow: 4;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .enheds-card-info {
+        padding-bottom: 32px;
       }
     }
   }
@@ -207,22 +216,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* Frame 52 */
-
-/* Auto layout */
-// display: flex;
-// flex-direction: column;
-// align-items: flex-start;
-// padding: 19.1403px;
-// gap: 10.85px;
-
-// position: absolute;
-// width: 338.14px;
-// height: 94.13px;
-// left: calc(50% - 338.14px/2);
-// top: 329.21px;
-
-// background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(112, 112, 112, 0.5) 100%);
-// backdrop-filter: blur(5.10407px);
-/* Note: backdrop-filter has minimal browser support */

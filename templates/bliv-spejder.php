@@ -53,10 +53,8 @@
                     <!-- Saves photo credits to be shown at the bottom -->
                     <?php  array_push($foto_credits, get_field('enheds_billed_kredit')) ?>
 
-                    <?php // print_r( get_the_terms(get_post) ) 
+                    <?php 
                         $terms = get_the_terms( $post->ID, 'afdelinger' );
-                    // echo 'hej '  . $terms[0] -> slug;
-
                     ?>
 
 

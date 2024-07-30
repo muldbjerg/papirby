@@ -7,11 +7,13 @@
 :root {
   // --background: #e7e2d9;
   --background: #eeeae3;
-  --main-text-color: #423116;
+  // --main-text-color: #423116;
+  --main-text-color: #151109;
   --light-text-color: #756e61;
 
   --dark-green: #01472c;
-  --main-green: #056343;
+  // --main-green: #056343;
+  --main-green: #066f4c;
   --pop-color: #c7234e;
 
   --site-width: 95%;
@@ -33,13 +35,13 @@ html {
 
 body {
   position: absolute;
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
   font-family: "Barlow", system-ui, -apple-system, sans-serif;
   font-family: var(--font-normal);
   font-weight: normal;
-  font-weight: 400;
   font-size: 1.25rem;
   line-height: 1.4;
   color: var(--main-text-color);
@@ -64,28 +66,44 @@ img {
   height: auto;
 }
 
-a {
+a,
+a:visited {
   transition: var(--standard-transition);
+  color: var(--main-green);
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--dark-green);
+      text-decoration: underline;
+    }
+  }
 }
 
 // BUTTONS
 .btn-primary,
-.wp-block-button__link:not(.has-background) {
+a.btn-primary,
+.wp-block-button__link:not(.has-background),
+.hentry
+  .entry-content
+  .wp-block-button
+  .wp-block-button__link:not(.has-background) {
   font-family: var(--font-condensed);
+  font-weight: normal;
   display: inline-block;
   padding: 8px 24px;
-  background-color: #c7234e;
+  background-color: var(--pop-color);
   color: #fff;
   border-radius: 32px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: var(--standard-transition);
 
   @media (hover: hover) {
     &:hover {
       color: #fff;
       background-color: #7f1632;
+      text-decoration: none;
     }
   }
 
@@ -95,7 +113,12 @@ a {
 }
 
 .btn-secondary,
-.wp-block-button.is-style-outline .wp-block-button__link {
+a.btn-secondary,
+.wp-block-button.is-style-outline .wp-block-button__link,
+.hentry
+  .entry-content
+  .wp-block-button.is-style-outline
+  .wp-block-button__link {
   font-family: var(--font-condensed);
   display: inline-block;
   padding: 8px 24px;
@@ -105,13 +128,15 @@ a {
   border-radius: 32px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: var(--standard-transition);
 
   @media (hover: hover) {
     &:hover {
-      color: #fff;
       background-color: var(--dark-green);
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid var(--dark-green);
     }
   }
 
@@ -124,7 +149,8 @@ a {
   color: var(--dark-green);
 }
 
-.btn-tertiary {
+.btn-tertiary,
+a.btn-tertiary {
   display: inline-block;
   padding: 6px 16px;
   color: var(--main-text-color);
@@ -137,11 +163,70 @@ a {
   @media (hover: hover) {
     &:hover {
       opacity: 0.6;
+      text-decoration: none;
     }
   }
 
   &:active {
     transform: scale(0.98);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .btn-primary,
+  a.btn-primary,
+  .wp-block-button__link:not(.has-background),
+  .hentry
+    .entry-content
+    .wp-block-button
+    .wp-block-button__link:not(.has-background) {
+    padding: 4px 16px;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+  }
+}
+
+// Standard pages
+article.page.type-page {
+  padding: 120px 0 0;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .entry-title {
+    text-align: center;
+    font-family: var(--font-fancy);
+    font-size: 3rem;
+    color: var(--main-green);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    margin-top: 60px;
+  }
+
+  .edit-link {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  article.page.type-page {
+    padding: 60px 0 0;
+
+    .entry-title {
+      text-align: center;
+      font-family: var(--font-fancy);
+      font-size: 2rem;
+      color: var(--main-green);
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    .edit-link {
+      margin-top: 80px;
+    }
   }
 }
 
@@ -155,7 +240,7 @@ a {
     font-family: var(--font-condensed);
     text-transform: uppercase;
     font-weight: normal;
-    letter-spacing: 1px;
+    letter-spacing: 0.75px;
   }
 }
 

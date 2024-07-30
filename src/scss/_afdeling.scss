@@ -1,0 +1,186 @@
+.afdeling-page {
+  padding-top: 60px;
+
+  h1 {
+    text-align: center;
+    font-family: var(--font-fancy);
+    color: var(--main-green);
+  }
+
+  .afdeling-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 56px;
+
+    .afdeling-text {
+      flex-grow: 1;
+      max-width: 700px;
+
+      .afdeling-info {
+        & > div {
+          display: flex;
+          grid-template-columns: 50px 1fr;
+          margin-top: 40px;
+        }
+
+        .afdeling-info-icon {
+          border: 1px solid var(--main-text-color);
+          border-radius: 40px;
+          width: 52px;
+          height: 52px;
+          margin-right: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg {
+            width: 32px;
+            max-height: 30px;
+          }
+        }
+
+        .afdeling-info-text {
+          line-height: 1.6;
+        }
+
+        p {
+          margin: 0px;
+        }
+
+        .afdeling-info-label {
+          font-family: var(--font-condensed);
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .afdeling-image {
+      flex-grow: 1;
+      max-width: 35%;
+
+      .afdeling-image-kredit {
+        font-size: 1rem;
+        margin: 4px 0 0;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  #afdelinger-enheder {
+    margin-top: 160px;
+
+    h2 {
+      text-align: center;
+      font-family: var(--font-condensed);
+      font-weight: normal;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .afdelings-enheds-card {
+      background-color: #fff;
+      margin-top: 32px;
+      padding: 80px;
+      border-radius: 40px;
+
+      h3 {
+        margin: 0 0 32px;
+        font-family: var(--font-fancy);
+        color: var(--main-green);
+      }
+
+      .afdelings-enheds-card-content {
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+        gap: 80px;
+
+        .enheds-card-info-sub {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+          column-gap: 24px;
+
+          p {
+            margin: 0 0 16px;
+          }
+        }
+
+        .afdelings-enheds-card-content-additional {
+          h4 {
+            font-family: var(--font-condensed);
+            font-size: 1rem;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 8px;
+
+            &:not(:first-of-type) {
+              margin-top: 40px;
+            }
+          }
+
+          p {
+            margin: 0px;
+          }
+
+          .btn-secondary {
+            font-size: 1.25rem;
+          }
+
+          .enhedsleder-info {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+
+            .enhedsleder-billed {
+              max-width: 100px;
+              aspect-ratio: 1 / 1;
+              object-fit: cover;
+              mask-image: var(--blob-svg);
+              mask-size: 100%;
+              mask-repeat: no-repeat;
+              mask-position: center;
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .afdeling-page {
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .afdeling-page {
+    .afdeling-content {
+      flex-direction: column;
+
+      .afdeling-image {
+        max-width: unset;
+
+        .afdeling-image-kredit {
+          text-align: center;
+        }
+      }
+    }
+
+    #afdelinger-enheder {
+      .afdelings-enheds-card {
+        padding: 56px 32px;
+        font-size: 1.1rem;
+
+        .afdelings-enheds-card-content {
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+}

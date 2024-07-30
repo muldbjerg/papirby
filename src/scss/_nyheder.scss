@@ -27,6 +27,8 @@ h1.nyheds-page {
 
     @media (hover: hover) {
       &:hover {
+        text-decoration: none;
+
         .post-thumbnail img {
           transform: scale(1.025);
         }
