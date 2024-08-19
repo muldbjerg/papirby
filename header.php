@@ -45,7 +45,6 @@
 				<path d="M23.9171 0.000304992C22.0514 4.74088 22.9285 13.4015 23.7451 22.2422H24.0902C24.9065 13.4015 25.7834 4.74088 23.9171 0.000304992Z" fill="#23660F"/>
 			</svg>
 			<div>
-				<!-- <span>Silkeborg</span> <span>KFUM</span> <span>Spejdere</span> -->
 				<?php echo bloginfo('title'); ?>
 			</div>
 		</a>

@@ -25,10 +25,11 @@
     }
 
     .footer_title {
-      margin: 16px 0 0;
+      margin: 16px auto 0;
       font-family: var(--font-fancy);
       font-size: clamp(1.6rem, 3.3vw, 5rem);
       line-height: 1.2;
+      max-width: 600px;
     }
 
     .footer_subtitle {
@@ -76,6 +77,10 @@
         rgba(39, 32, 19, 0.8) 40%,
         rgba(39, 32, 19, 1) 100%
       );
+
+      .footer_title {
+        max-width: 400px;
+      }
     }
 
     .footer-nav {

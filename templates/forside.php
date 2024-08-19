@@ -37,7 +37,7 @@
     </div>
 
     <div class="about-group">
-        <h2>Bliv spejder <br/> overalt i Silkeborg</h2>
+        <h2>Du kan cykle <br/> til spejder</h2>
 
         <div class="about-group-text">
             <?php the_field('map_tekst') ?>
@@ -84,3 +84,4 @@
 <?php
     get_footer();
 ?>
+
