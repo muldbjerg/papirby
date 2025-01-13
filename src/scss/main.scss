@@ -7,16 +7,16 @@ Author URI: https://muldbjerg.com
 Template: storefront 
 */
 
-@import "reset";
-@import "fonts";
-@import "general";
-@import "header";
-@import "footer";
+@use "reset";
+@use "fonts";
+@use "general";
+@use "header";
+@use "footer";
 
 // templates
-@import "forside";
-@import "blivspejder";
-@import "nyheder";
-@import "single";
-@import "map";
-@import "afdeling";
+@use "forside";
+@use "blivspejder";
+@use "nyheder";
+@use "single";
+@use "map";
+@use "afdeling";
