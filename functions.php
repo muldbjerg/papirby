@@ -99,6 +99,49 @@ function add_custom_taxonomies() {
 add_action( 'init', 'add_custom_taxonomies', 0 );
 
 
+// Register block patterns
+function papirby_register_block_patterns() {
+
+	// The block pattern categories included in papirby.
+	$papirby_block_pattern_categories = apply_filters( 'papirby_block_pattern_categories', array(
+		'papirby'  => array(
+			'label'			=> esc_html__( 'Papirby - All', 'papirby' ),
+		),
+		'papirby-blog'  => array(
+			'label'			=> esc_html__( 'Papirby - Blog', 'papirby' ),
+		),
+		'papirby-cta'  => array(
+			'label'			=> esc_html__( 'Papirby - Call to Action', 'papirby' ),
+		),
+		'papirby-general' => array(
+			'label'			=> esc_html__( 'Papirby - General', 'papirby' ),
+		),
+		'papirby-hero' => array(
+			'label'			=> esc_html__( 'Papirby - Hero', 'papirby' ),
+		),
+		'papirby-media' => array(
+			'label'			=> esc_html__( 'Papirby - Media', 'papirby' ),
+		),
+		'papirby-page' => array(
+			'label'			=> esc_html__( 'Papirby - Page Layouts', 'papirby' ),
+		),
+	) );
+
+	// Sort the block pattern categories alphabetically based on the label value, to ensure alphabetized order when the strings are localized.
+	uasort( $papirby_block_pattern_categories, function( $a, $b ) { 
+		return strcmp( $a["label"], $b["label"] ); }
+	);
+
+	// Register block pattern categories.
+	foreach ( $papirby_block_pattern_categories as $slug => $settings ) {
+		register_block_pattern_category( $slug, $settings );
+	}
+
+}
+add_action( 'init', 'papirby_register_block_patterns' );
+
+
+
 // ADVANCHED CUSTOM FIELDS
 // include_once('acf_fields.php');
 
