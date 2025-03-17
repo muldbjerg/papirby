@@ -21,7 +21,7 @@
         <a href="<?php echo get_site_url(); ?>/afdelinger/alderslyst/" class="location alderslyst">
             <div class="location alderslyst">
             
-                <?php include 'inc/markers.php'; ?>
+                <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
                 <p>Alderslyst</p>
             </div>
