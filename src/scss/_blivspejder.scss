@@ -23,9 +23,10 @@
   .bliv-spejder-scarf {
     position: absolute;
     right: 0;
-    top: -60px;
+    top: -100px;
     width: 300px;
     mix-blend-mode: multiply;
+    color: var(--pop-color);
   }
 }
 
@@ -199,6 +200,8 @@
   .bliv-spejder-header {
     .bliv-spejder-scarf {
       width: 150px;
+      height: 150px;
+      top: -40px;
     }
   }
 
