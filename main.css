@@ -70,9 +70,7 @@ a:visited {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Barlow Condensed";
@@ -80,9 +78,7 @@ a:visited {
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-    U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Barlow";
@@ -180,10 +176,7 @@ a:visited {
 .btn-primary,
 a.btn-primary,
 .wp-block-button__link:not(.has-background),
-.hentry
-  .entry-content
-  .wp-block-button
-  .wp-block-button__link:not(.has-background) {
+.hentry .entry-content .wp-block-button .wp-block-button__link:not(.has-background) {
   font-family: var(--font-condensed);
   font-weight: normal;
   display: inline-block;
@@ -200,10 +193,7 @@ a.btn-primary,
   .btn-primary:hover,
   a.btn-primary:hover,
   .wp-block-button__link:not(.has-background):hover,
-  .hentry
-    .entry-content
-    .wp-block-button
-    .wp-block-button__link:not(.has-background):hover {
+  .hentry .entry-content .wp-block-button .wp-block-button__link:not(.has-background):hover {
     color: #fff;
     background-color: #7f1632;
     text-decoration: none;
@@ -212,20 +202,14 @@ a.btn-primary,
 .btn-primary:active,
 a.btn-primary:active,
 .wp-block-button__link:not(.has-background):active,
-.hentry
-  .entry-content
-  .wp-block-button
-  .wp-block-button__link:not(.has-background):active {
+.hentry .entry-content .wp-block-button .wp-block-button__link:not(.has-background):active {
   transform: scale(0.95);
 }
 
 .btn-secondary,
 a.btn-secondary,
 .wp-block-button.is-style-outline .wp-block-button__link,
-.hentry
-  .entry-content
-  .wp-block-button.is-style-outline
-  .wp-block-button__link {
+.hentry .entry-content .wp-block-button.is-style-outline .wp-block-button__link {
   font-family: var(--font-condensed);
   display: inline-block;
   padding: 8px 24px;
@@ -242,10 +226,7 @@ a.btn-secondary,
   .btn-secondary:hover,
   a.btn-secondary:hover,
   .wp-block-button.is-style-outline .wp-block-button__link:hover,
-  .hentry
-    .entry-content
-    .wp-block-button.is-style-outline
-    .wp-block-button__link:hover {
+  .hentry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:hover {
     background-color: var(--dark-green);
     color: #fff;
     text-decoration: none;
@@ -255,10 +236,7 @@ a.btn-secondary,
 .btn-secondary:active,
 a.btn-secondary:active,
 .wp-block-button.is-style-outline .wp-block-button__link:active,
-.hentry
-  .entry-content
-  .wp-block-button.is-style-outline
-  .wp-block-button__link:active {
+.hentry .entry-content .wp-block-button.is-style-outline .wp-block-button__link:active {
   transform: scale(0.95);
 }
 
@@ -293,10 +271,7 @@ a.btn-tertiary:active {
   .btn-primary,
   a.btn-primary,
   .wp-block-button__link:not(.has-background),
-  .hentry
-    .entry-content
-    .wp-block-button
-    .wp-block-button__link:not(.has-background) {
+  .hentry .entry-content .wp-block-button .wp-block-button__link:not(.has-background) {
     padding: 4px 16px;
     letter-spacing: 1px;
     font-size: 1.25rem;
@@ -606,12 +581,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
 .main-footer .footer-content {
   text-align: center;
   padding: 380px 0 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(39, 32, 19, 0) 0%,
-    rgba(39, 32, 19, 0.8) 60%,
-    rgb(39, 32, 19) 100%
-  );
+  background: linear-gradient(180deg, rgba(39, 32, 19, 0) 0%, rgba(39, 32, 19, 0.8) 60%, rgb(39, 32, 19) 100%);
 }
 .main-footer .footer-content svg {
   margin: 0 auto;
@@ -656,12 +626,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   }
   .main-footer .footer-content {
     padding: 120px 0 0;
-    background: linear-gradient(
-      180deg,
-      rgba(39, 32, 19, 0) 0%,
-      rgba(39, 32, 19, 0.8) 40%,
-      rgb(39, 32, 19) 100%
-    );
+    background: linear-gradient(180deg, rgba(39, 32, 19, 0) 0%, rgba(39, 32, 19, 0.8) 40%, rgb(39, 32, 19) 100%);
   }
   .main-footer .footer-content .footer_title {
     max-width: 400px;
@@ -797,8 +762,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
 }
 
 @keyframes MoveUpDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) scale(1);
   }
   50% {
@@ -806,8 +770,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   }
 }
 @keyframes MoveDownUp {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0);
   }
   50% {
@@ -931,9 +894,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   line-height: 1.1;
   transition: var(--standard-transition);
 }
-.forside-nyheder-posts
-  .forside-nyheder-post-card
-  p.forside-nyheder-post-card-meta {
+.forside-nyheder-posts .forside-nyheder-post-card p.forside-nyheder-post-card-meta {
   margin: 8px 0 0;
   font-family: var(--font-condensed);
   text-transform: uppercase;
@@ -941,16 +902,12 @@ body:not(.home) .nav-menu > li:last-child a:active {
   letter-spacing: 1px;
   color: var(--light-text-color);
 }
-.forside-nyheder-posts
-  .forside-nyheder-post-card
-  p.forside-nyheder-post-card-teaser {
+.forside-nyheder-posts .forside-nyheder-post-card p.forside-nyheder-post-card-teaser {
   font-size: 1rem;
   margin: 8px 0 0;
   color: var(--light-text-color);
 }
-.forside-nyheder-posts
-  .forside-nyheder-post-card
-  .forside-nyheder-post-card-read-more {
+.forside-nyheder-posts .forside-nyheder-post-card .forside-nyheder-post-card-read-more {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -959,17 +916,11 @@ body:not(.home) .nav-menu > li:last-child a:active {
   color: var(--light-text-color);
   opacity: 0.6;
 }
-.forside-nyheder-posts
-  .forside-nyheder-post-card
-  .forside-nyheder-post-card-read-more
-  p {
+.forside-nyheder-posts .forside-nyheder-post-card .forside-nyheder-post-card-read-more p {
   float: left;
   margin: 0px;
 }
-.forside-nyheder-posts
-  .forside-nyheder-post-card
-  .forside-nyheder-post-card-read-more
-  svg {
+.forside-nyheder-posts .forside-nyheder-post-card .forside-nyheder-post-card-read-more svg {
   float: left;
   margin-top: 2px;
 }
@@ -980,9 +931,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   .forside-nyheder-posts .forside-nyheder-post-card:hover h3 {
     opacity: 0.8;
   }
-  .forside-nyheder-posts
-    .forside-nyheder-post-card:hover
-    .forside-nyheder-post-card-read-more {
+  .forside-nyheder-posts .forside-nyheder-post-card:hover .forside-nyheder-post-card-read-more {
     color: var(--main-green);
     opacity: 1;
   }
@@ -1084,10 +1033,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   border-radius: 40px;
   padding: 32px;
 }
-.bliv-spejder-page-content
-  .wp-block-columns
-  .wp-block-column
-  .wp-block-buttons {
+.bliv-spejder-page-content .wp-block-columns .wp-block-column .wp-block-buttons {
   justify-content: center;
 }
 .bliv-spejder-page-content .wp-block-columns .wp-block-column h3 {
@@ -1156,8 +1102,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
 .bliv-spejder-enheds-oversigt-photo-credits {
   font-size: 1rem;
 }
-.bliv-spejder-enheds-oversigt-photo-credits
-  .foto-credit:not(:last-of-type)::after {
+.bliv-spejder-enheds-oversigt-photo-credits .foto-credit:not(:last-of-type)::after {
   content: ", ";
 }
 
@@ -1175,11 +1120,7 @@ body:not(.home) .nav-menu > li:last-child a:active {
   bottom: 0px;
   padding: 24px;
   color: #fff;
-  background: linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(112, 112, 112, 0.5) 100%
-  );
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(112, 112, 112, 0.5) 100%);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   border-radius: 0 0 24px 24px;
@@ -1309,8 +1250,7 @@ h1.nyheds-page {
   background-color: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.nyheds-posts-pagination .nav-links .page-numbers.next,
-.nyheds-posts-pagination .nav-links .page-numbers.prev {
+.nyheds-posts-pagination .nav-links .page-numbers.next, .nyheds-posts-pagination .nav-links .page-numbers.prev {
   font-family: var(--font-condensed);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1328,8 +1268,7 @@ h1.nyheds-page {
   .nyheds-posts .post .post-thumbnail {
     width: auto;
   }
-  .nyheds-posts-pagination .nav-links .page-numbers.next,
-  .nyheds-posts-pagination .nav-links .page-numbers.prev {
+  .nyheds-posts-pagination .nav-links .page-numbers.next, .nyheds-posts-pagination .nav-links .page-numbers.prev {
     width: 100%;
     text-align: center;
     padding: 16px 0;
@@ -1453,8 +1392,7 @@ h1.nyheds-page {
 }
 
 @keyframes ScaleUpDown {
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1.2);
     opacity: 0.2;
   }
@@ -1474,10 +1412,7 @@ h1.nyheds-page {
     margin-top: 32px;
     gap: 16px;
   }
-  .map .location.alderslyst,
-  .map .location.funder,
-  .map .location.goedvad,
-  .map .location.virklund {
+  .map .location.alderslyst, .map .location.funder, .map .location.goedvad, .map .location.virklund {
     top: unset;
     left: unset;
   }
@@ -1495,31 +1430,30 @@ h1.nyheds-page {
   padding-top: 60px;
 }
 .afdeling-page h1 {
-  text-align: center;
+  text-align: left;
   font-family: var(--font-fancy);
   color: var(--main-green);
 }
 .afdeling-page .afdeling-content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-top: 56px;
 }
 .afdeling-page .afdeling-content .afdeling-text {
-  flex-grow: 1;
-  max-width: 700px;
+  max-width: 600px;
 }
-.afdeling-page .afdeling-content .afdeling-text .afdeling-info > div {
+.afdeling-page .afdeling-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 40px;
+}
+.afdeling-page .afdeling-info > div {
   display: flex;
   grid-template-columns: 50px 1fr;
   margin-top: 40px;
 }
-.afdeling-page
-  .afdeling-content
-  .afdeling-text
-  .afdeling-info
-  .afdeling-info-icon {
-  border: 1px solid var(--main-text-color);
+.afdeling-page .afdeling-info .afdeling-info-icon {
+  background-color: #bfd7cf;
   border-radius: 40px;
   width: 52px;
   height: 52px;
@@ -1527,41 +1461,29 @@ h1.nyheds-page {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--main-green);
 }
-.afdeling-page
-  .afdeling-content
-  .afdeling-text
-  .afdeling-info
-  .afdeling-info-icon
-  svg {
+.afdeling-page .afdeling-info .afdeling-info-icon svg {
   width: 32px;
   max-height: 30px;
 }
-.afdeling-page
-  .afdeling-content
-  .afdeling-text
-  .afdeling-info
-  .afdeling-info-text {
+.afdeling-page .afdeling-info .afdeling-info-text {
   line-height: 1.6;
 }
-.afdeling-page .afdeling-content .afdeling-text .afdeling-info p {
+.afdeling-page .afdeling-info p {
   margin: 0px;
 }
-.afdeling-page
-  .afdeling-content
-  .afdeling-text
-  .afdeling-info
-  .afdeling-info-label {
+.afdeling-page .afdeling-info .afdeling-info-label {
   font-family: var(--font-condensed);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 1px;
 }
-.afdeling-page .afdeling-content .afdeling-image {
+.afdeling-page .afdeling-image {
   flex-grow: 1;
   max-width: 35%;
 }
-.afdeling-page .afdeling-content .afdeling-image .afdeling-image-kredit {
+.afdeling-page .afdeling-image .afdeling-image-kredit {
   font-size: 1rem;
   margin: 4px 0 0;
   opacity: 0.6;
@@ -1587,39 +1509,22 @@ h1.nyheds-page {
   font-family: var(--font-fancy);
   color: var(--main-green);
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content {
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   gap: 80px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .enheds-card-info-sub {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .enheds-card-info-sub {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
   column-gap: 24px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .enheds-card-info-sub
-  p {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .enheds-card-info-sub p {
   margin: 0 0 16px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  h4 {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional h4 {
   font-family: var(--font-condensed);
   font-size: 1rem;
   font-weight: normal;
@@ -1627,47 +1532,21 @@ h1.nyheds-page {
   letter-spacing: 1px;
   margin: 0 0 8px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  h4:not(:first-of-type) {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional h4:not(:first-of-type) {
   margin-top: 40px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  p {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional p {
   margin: 0px;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  .btn-secondary {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional .btn-secondary {
   font-size: 1.25rem;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  .enhedsleder-info {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional .enhedsleder-info {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
 }
-.afdeling-page
-  #afdelinger-enheder
-  .afdelings-enheds-card
-  .afdelings-enheds-card-content
-  .afdelings-enheds-card-content-additional
-  .enhedsleder-info
-  .enhedsleder-billed {
+.afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content .afdelings-enheds-card-content-additional .enhedsleder-info .enhedsleder-billed {
   max-width: 100px;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -1680,22 +1559,16 @@ h1.nyheds-page {
 
 @media only screen and (max-width: 900px) {
   .afdeling-page .afdeling-content {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  .afdeling-page .afdeling-content .afdeling-image {
-    max-width: unset;
-  }
-  .afdeling-page .afdeling-content .afdeling-image .afdeling-image-kredit {
-    text-align: center;
+  .afdeling-page .afdeling-info {
+    grid-template-columns: 1fr;
   }
   .afdeling-page #afdelinger-enheder .afdelings-enheds-card {
     padding: 56px 32px;
     font-size: 1.1rem;
   }
-  .afdeling-page
-    #afdelinger-enheder
-    .afdelings-enheds-card
-    .afdelings-enheds-card-content {
+  .afdeling-page #afdelinger-enheder .afdelings-enheds-card .afdelings-enheds-card-content {
     grid-template-columns: 1fr;
   }
 }
