@@ -258,3 +258,13 @@ article.page.type-page {
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.02);
 }
+
+
+.wp-block-columns-is-layout-flex{
+  display: flex;
+  flex-wrap: wrap;
+  
+  .wp-block-column{
+    flex: 1;
+  }
+}
