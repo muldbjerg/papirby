@@ -1,5 +1,25 @@
 /* PAGE: BLIV SPEJDER */
 
+@mixin columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+
+  @media only screen and (max-width: 1200px) {
+    & {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+  
+
 /* --- Header ---- */
 
 .bliv-spejder-header {
@@ -35,6 +55,8 @@
   margin-top: 160px;
 
   .wp-block-columns {
+    @include columns;
+
     .wp-block-column {
       background-color: #fff;
       border-radius: 40px;
@@ -113,9 +135,7 @@
 }
 
 #bliv-spejder-enheds-oversigt-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2em;
+  @include columns;
   margin-top: 160px;
 }
 
@@ -190,11 +210,6 @@
   opacity: 0.4;
 }
 
-@media only screen and (max-width: 1200px) {
-  #bliv-spejder-enheds-oversigt-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 @media only screen and (max-width: 900px) {
   .bliv-spejder-header {
@@ -211,11 +226,5 @@
         flex-direction: column;
       }
     }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #bliv-spejder-enheds-oversigt-container {
-    grid-template-columns: 1fr;
   }
 }

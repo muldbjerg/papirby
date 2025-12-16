@@ -1028,6 +1028,21 @@ body:not(.home) .nav-menu > li:last-child a:active {
   text-align: center;
   margin-top: 160px;
 }
+.bliv-spejder-page-content .wp-block-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2em;
+}
+@media only screen and (max-width: 1200px) {
+  .bliv-spejder-page-content .wp-block-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .bliv-spejder-page-content .wp-block-columns {
+    grid-template-columns: 1fr;
+  }
+}
 .bliv-spejder-page-content .wp-block-columns .wp-block-column {
   background-color: #fff;
   border-radius: 40px;
@@ -1098,6 +1113,16 @@ body:not(.home) .nav-menu > li:last-child a:active {
   gap: 2em;
   margin-top: 160px;
 }
+@media only screen and (max-width: 1200px) {
+  #bliv-spejder-enheds-oversigt-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #bliv-spejder-enheds-oversigt-container {
+    grid-template-columns: 1fr;
+  }
+}
 
 .bliv-spejder-enheds-oversigt-photo-credits {
   font-size: 1rem;
@@ -1153,11 +1178,6 @@ body:not(.home) .nav-menu > li:last-child a:active {
   opacity: 0.4;
 }
 
-@media only screen and (max-width: 1200px) {
-  #bliv-spejder-enheds-oversigt-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 @media only screen and (max-width: 900px) {
   .bliv-spejder-header .bliv-spejder-scarf {
     width: 150px;
@@ -1166,11 +1186,6 @@ body:not(.home) .nav-menu > li:last-child a:active {
   }
   .enheds-card .enheds-card-info .enheds-card-info-sub {
     flex-direction: column;
-  }
-}
-@media only screen and (max-width: 600px) {
-  #bliv-spejder-enheds-oversigt-container {
-    grid-template-columns: 1fr;
   }
 }
 h1.nyheds-page {
