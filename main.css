@@ -647,11 +647,14 @@ body:not(.home) .nav-menu > li:last-child a:active {
   }
 }
 .wp-block-details {
-  padding: 8px 16px;
   transform: translateX(-16px);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.1s ease-out;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+}
+.wp-block-details p {
+  padding: 0px 16px 16px;
+  margin: 8px 0 0;
 }
 
 .wp-block-details > summary {
@@ -661,11 +664,20 @@ body:not(.home) .nav-menu > li:last-child a:active {
   justify-content: space-between;
   font-weight: bold;
   font-weight: 400;
-  padding: 8px 0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 @media (hover: hover) {
   .wp-block-details > summary:hover {
     font-weight: 600;
+    background-color: #fff;
+  }
+}
+
+@media (hover: hover) {
+  .wp-block-details:hover {
+    background-color: #fff;
   }
 }
 
