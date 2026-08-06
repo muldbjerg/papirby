@@ -1,4 +1,6 @@
-add_action( 'acf/include_fields', function() {
+<?php
+
+function papirby_register_acf_field_groups() {
 	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
 		return;
 	}
@@ -500,5 +502,109 @@ add_action( 'acf/include_fields', function() {
 	'description' => '',
 	'show_in_rest' => 0,
 ) );
-} );
+
+	acf_add_local_field_group( array(
+	'key' => 'group_begivenheder_fields',
+	'title' => 'Begivenhedsdetaljer',
+	'fields' => array(
+		array(
+			'key' => 'field_begivenhed_start_dato',
+			'label' => 'Start dato og tidspunkt',
+			'name' => 'start_dato',
+			'type' => 'date_time_picker',
+			'instructions' => 'Dato og starttidspunkt for begivenheden (bruges til kronologisk sortering)',
+			'required' => 1,
+			'display_format' => 'd/m/Y H:i',
+			'return_format' => 'Y-m-d H:i:s',
+			'first_day' => 1,
+		),
+		array(
+			'key' => 'field_begivenhed_slut_dato',
+			'label' => 'Slut dato og tidspunkt',
+			'name' => 'slut_dato',
+			'type' => 'date_time_picker',
+			'instructions' => 'Valgfrit for flerdages arrangementer eller specifik slut-tid',
+			'required' => 0,
+			'display_format' => 'd/m/Y H:i',
+			'return_format' => 'Y-m-d H:i:s',
+			'first_day' => 1,
+		),
+		array(
+			'key' => 'field_begivenhed_tidspunkt_tekst',
+			'label' => 'Tidspunkt (tekst)',
+			'name' => 'tidspunkt_tekst',
+			'type' => 'text',
+			'instructions' => 'f.eks. "Kl. 18:30 - 20:00" eller "Lørdag kl. 10.00 til søndag kl. 14.00"',
+			'required' => 0,
+		),
+		array(
+			'key' => 'field_begivenhed_location_sted',
+			'label' => 'Sted / Mødested',
+			'name' => 'location_sted',
+			'type' => 'text',
+			'instructions' => 'f.eks. "Spejderhytten, Silkeborg" eller "Kongehøjlejren"',
+			'required' => 0,
+		),
+		array(
+			'key' => 'field_begivenhed_pris',
+			'label' => 'Pris',
+			'name' => 'pris',
+			'type' => 'text',
+			'instructions' => 'f.eks. "50 kr." eller "Gratis"',
+			'required' => 0,
+		),
+		array(
+			'key' => 'field_begivenhed_tilmeldingsfrist',
+			'label' => 'Tilmeldingsfrist',
+			'name' => 'tilmeldingsfrist',
+			'type' => 'date_picker',
+			'instructions' => 'Sidste frist for tilmelding',
+			'required' => 0,
+			'display_format' => 'd/m/Y',
+			'return_format' => 'Y-m-d',
+			'first_day' => 1,
+		),
+		array(
+			'key' => 'field_begivenhed_tilmeldings_link',
+			'label' => 'Tilmeldingslink',
+			'name' => 'tilmeldings_link',
+			'type' => 'url',
+			'instructions' => 'Direkte link til tilmelding på Medlemsservice eller eksternt skjema',
+			'required' => 0,
+		),
+		array(
+			'key' => 'field_begivenhed_kontaktperson',
+			'label' => 'Kontaktperson',
+			'name' => 'kontaktperson',
+			'type' => 'text',
+			'instructions' => 'Navn, e-mail eller telefonnummer på den ansvarlige leder',
+			'required' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'begivenheder',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'active' => true,
+	'show_in_rest' => 1,
+) );
+}
+
+add_action( 'acf/init', 'papirby_register_acf_field_groups' );
+add_action( 'init', 'papirby_register_acf_field_groups', 5 );
+
+// If ACF is already initialized when this file is loaded, run directly:
+if ( function_exists( 'acf_add_local_field_group' ) ) {
+    papirby_register_acf_field_groups();
+}
 

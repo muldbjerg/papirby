@@ -60,9 +60,31 @@ function create_posttype() {
           'has_archive' => false,
           'rewrite' => array('slug' => 'enheder'),
           'show_in_rest' => true,
-			    'taxonomies' => array( 'afdeling' ),
+          'taxonomies' => array( 'afdelinger' ),
           'hierarchical' => true,
           'supports' => array('title', 'editor', 'page-attributes')
+        )
+    );
+
+    register_post_type( 'begivenheder',
+        array(
+          'labels' => array(
+            'name' => __( 'Begivenheder' ),
+            'singular_name' => __( 'Begivenhed' ),
+            'add_new_item' => __( 'Tilføj ny begivenhed' ),
+            'edit_item' => __( 'Rediger begivenhed' ),
+            'update_item' => __( 'Opdater begivenhed' ),
+            'search_items' => __( 'Søg begivenheder' ),
+            'menu_name' => __( 'Kalender' ),
+          ),
+          'public' => true,
+          'has_archive' => true,
+          'rewrite' => array('slug' => 'begivenhed'),
+          'show_in_rest' => true,
+          'menu_icon' => 'dashicons-calendar-alt',
+          'taxonomies' => array( 'afdelinger', 'begivenhed_kategori' ),
+          'hierarchical' => false,
+          'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
         )
     );
 }
@@ -70,8 +92,8 @@ function create_posttype() {
 add_action( 'init', 'create_posttype' );
 
 function add_custom_taxonomies() {
-  // Add new "Locations" taxonomy to Posts
-  register_taxonomy('afdelinger', array('post', 'enheder'), array(
+  // Add new "Locations" taxonomy to Posts, Enheder, and Begivenheder
+  register_taxonomy('afdelinger', array('post', 'enheder', 'begivenheder'), array(
     // Hierarchical taxonomy (like categories)
     'hierarchical' => true,
     // This array of options controls the labels displayed in the WordPress Admin UI
@@ -94,13 +116,39 @@ function add_custom_taxonomies() {
       'with_front' => false, // Don't display the category base before "/locations/"
       'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
     ),
+    'show_in_rest' => true,
+  ));
+
+  register_taxonomy('begivenhed_kategori', array('begivenheder'), array(
+    'hierarchical' => true,
+    'labels' => array(
+      'name' => _x( 'Begivenhedskategorier', 'taxonomy general name' ),
+      'singular_name' => _x( 'Begivenhedskategori', 'taxonomy singular name' ),
+      'search_items' =>  __( 'Søg kategorier' ),
+      'all_items' => __( 'Alle kategorier' ),
+      'parent_item' => __( 'Forældrekategori' ),
+      'parent_item_colon' => __( 'Forældrekategori:' ),
+      'edit_item' => __( 'Rediger kategori' ),
+      'update_item' => __( 'Opdater kategori' ),
+      'add_new_item' => __( 'Tilføj ny kategori' ),
+      'new_item_name' => __( 'Ny kategori' ),
+      'menu_name' => __( 'Event Kategorier' ),
+    ),
+    'rewrite' => array(
+      'slug' => 'begivenhed-kategori',
+      'with_front' => false,
+      'hierarchical' => true
+    ),
+    'show_in_rest' => true,
   ));
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
 
 
-// ADVANCHED CUSTOM FIELDS
-// include_once('acf_fields.php');
+// ADVANCED CUSTOM FIELDS
+if ( file_exists( get_stylesheet_directory() . '/acf-fields.php' ) ) {
+    require_once get_stylesheet_directory() . '/acf-fields.php';
+}
 
 
 // function my_acf_add_local_field_groups() {
