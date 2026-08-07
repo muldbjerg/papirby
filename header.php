@@ -21,6 +21,9 @@
 	<meta name="msapplication-config" content="/wp-content/themes/papirby/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#23660f">
 
+	<script data-goatcounter="https://silkeborgspejder.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+
 	<?php wp_head(); ?>
 
 	
