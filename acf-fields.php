@@ -600,11 +600,9 @@ function papirby_register_acf_field_groups() {
 ) );
 }
 
-add_action( 'acf/init', 'papirby_register_acf_field_groups' );
-add_action( 'init', 'papirby_register_acf_field_groups', 5 );
-
-// If ACF is already initialized when this file is loaded, run directly:
 if ( function_exists( 'acf_add_local_field_group' ) ) {
     papirby_register_acf_field_groups();
+} else {
+    add_action( 'acf/init', 'papirby_register_acf_field_groups' );
 }
 
