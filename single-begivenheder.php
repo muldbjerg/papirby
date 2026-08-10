@@ -14,17 +14,35 @@ while (have_posts()) : the_post();
     $event_afdelinger = get_the_terms(get_the_ID(), 'afdelinger');
     $event_kategorier = get_the_terms(get_the_ID(), 'begivenhed_kategori');
 
+
     // Format dates cleanly
-    $start_formatted = $start_raw ? date('d.m.Y H:i', strtotime($start_raw)) : '';
-    $slut_formatted  = $slut_raw ? date('d.m.Y H:i', strtotime($slut_raw)) : '';
-    $frist_formatted = $tilmeldingsfrist ? date('d.m.Y', strtotime($tilmeldingsfrist)) : '';
+    $formatter = new IntlDateFormatter(
+        'da_DK', 
+        IntlDateFormatter::FULL, 
+        IntlDateFormatter::NONE, 
+        'Europe/Copenhagen', 
+        IntlDateFormatter::GREGORIAN, 
+        'dd. MMMM yyyy HH:mm'
+    );
+     $formatter_short = new IntlDateFormatter(
+        'da_DK', 
+        IntlDateFormatter::FULL, 
+        IntlDateFormatter::NONE, 
+        'Europe/Copenhagen', 
+        IntlDateFormatter::GREGORIAN, 
+        'dd. MMMM yyyy'
+    );
+    $start_formatted = $formatter->format(strtotime($start_raw));
+    $slut_formatted = $formatter->format(strtotime($slut_raw));
+    $frist_formatted = $formatter_short->format(strtotime($tilmeldingsfrist));
 
     $info_items = array_filter(array(
-        'Dato'             => $start_formatted ? ($start_formatted . ($slut_formatted ? ' - ' . $slut_formatted : '')) : null,
+        'Fra'              => $start_formatted ? $start_formatted : null,
+        'Til'              => $slut_formatted ? $slut_formatted : null,
         'Tidspunkt'        => get_field('tidspunkt_tekst'),
-        'Mødested'         => get_field('location_sted'),
+        'Sted'             => get_field('location_sted'),
         'Pris'             => get_field('pris'),
-        'Tilmeldingsfrist' => $frist_formatted,
+        'Tilmeldingsfrist' => $frist_formatted ? $frist_formatted : null,
         'Kontakt'          => get_field('kontaktperson'),
     ));
 ?>
@@ -33,7 +51,10 @@ while (have_posts()) : the_post();
     <div class="single-event-header">
         <a class="back-link" href="<?php echo home_url('/praktisk/kalender/'); ?>">← Tilbage til kalender</a>
 
-        <div class="event-tags">
+       
+        <h1><?php the_title(); ?></h1>
+
+         <div class="event-tags">
             <?php if (!empty($event_afdelinger) && !is_wp_error($event_afdelinger)) : ?>
                 <?php foreach ($event_afdelinger as $afdel) : ?>
                     <span class="tag tag-afdeling"><?php echo esc_html($afdel->name); ?></span>
@@ -45,10 +66,10 @@ while (have_posts()) : the_post();
                     <span class="tag tag-kategori"><?php echo esc_html($kat->name); ?></span>
                 <?php endforeach; ?>
             <?php endif; ?>
-        </div>
-
-        <h1><?php the_title(); ?></h1>
+        </div>   
+        
         <?php edit_post_link('Rediger begivenhed', '<p class="admin-edit-link">', '</p>'); ?>
+
     </div>
 
     <div class="single-event-layout">
@@ -56,7 +77,7 @@ while (have_posts()) : the_post();
         <div class="single-event-content">
             <?php if (has_post_thumbnail()) : ?>
                 <div class="single-event-featured-image">
-                    <?php the_post_thumbnail('large'); ?>
+                    <?php the_post_thumbnail(); ?>
                 </div>
             <?php endif; ?>
 
@@ -68,14 +89,18 @@ while (have_posts()) : the_post();
         <!-- Sidebar / Event Info Box -->
         <aside class="single-event-sidebar">
             <div class="event-info-card">
-                <h3>Praktisk information</h3>
+                <!-- <h3>Praktisk information</h3> -->
 
                 <?php if (!empty($info_items)) : ?>
                     <ul class="event-info-list">
                         <?php foreach ($info_items as $label => $val) : ?>
                             <li>
-                                <strong class="label"><?php echo esc_html($label); ?>:</strong>
-                                <span><?php echo esc_html($val); ?></span>
+                                <p class="label"><?php echo esc_html($label); ?></p>
+                                <?php if($label != 'Kontakt') : ?>
+                                    <p><?php echo esc_html($val); ?></p>
+                                <?php else : ?>
+                                    <p><?php echo $val; ?></p>
+                                <?php endif; ?>
                             </li>
                         <?php endforeach; ?>
                     </ul>

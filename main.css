@@ -1610,13 +1610,15 @@ h1.nyheds-page {
 /* KALENDER & BEGIVENHEDER - STYLES MATCHING KFUMSPEJDERNE.DK */
 .kalender-container {
   padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
   /* Hero Section */
   /* Filter Control Wrapper */
   /* Month Divider Headers */
   /* Empty State */
 }
 .kalender-container h1 {
-  text-align: left;
+  text-align: center;
   font-family: var(--font-fancy);
   color: var(--main-green);
 }
@@ -1692,6 +1694,7 @@ h1.nyheds-page {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 .kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-label {
   font-family: var(--font-condensed);
@@ -1783,7 +1786,7 @@ h1.nyheds-page {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  /* Event Card */
+  /* Event Card (Styled as News Post) */
 }
 .kalender-container .kalender-events-stream .month-divider {
   display: flex;
@@ -1807,36 +1810,93 @@ h1.nyheds-page {
 }
 .kalender-container .kalender-events-stream .kalender-card {
   display: grid;
-  background: #ffffff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
-  border: 1px solid #eae5dc;
-  padding: 20px;
-  transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.6, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-  /* Date Tile */
-  /* Card Body */
-  /* Card Actions */
+  grid-template-columns: 1fr 4fr;
+  gap: 42px;
+  color: var(--main-text-color);
+  text-decoration: none;
+  transition: var(--standard-transition);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
-.kalender-container .kalender-events-stream .kalender-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: #d4ccbe;
+@media (hover: hover) {
+  .kalender-container .kalender-events-stream .kalender-card:hover {
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
+  }
+  .kalender-container .kalender-events-stream .kalender-card:hover .post-thumbnail img, .kalender-container .kalender-events-stream .kalender-card:hover .post-thumbnail .fallback-date-tile {
+    transform: scale(1.025);
+  }
 }
-.kalender-container .kalender-events-stream .kalender-card h2 {
-  margin: 0px;
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+  width: 300px;
+  object-fit: cover;
 }
-.kalender-container .kalender-events-stream .kalender-card .kalender-card-meta {
-  max-width: 800px;
-  clear: both;
-  margin-top: 24px;
-  padding: 24px 0;
-  border-top: 1px solid #eae5dc;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail img, .kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile {
+  width: 100%;
+  border-radius: 16px;
+  transition: var(--standard-transition);
+  display: block;
 }
-.kalender-container .kalender-events-stream .kalender-card .kalender-card-meta .meta-point-date {
-  text-transform: capitalize;
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--dark-green) 0%, var(--main-green) 100%);
+  color: #ffffff;
+  aspect-ratio: 4/3;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile .date-day {
+  font-family: var(--font-condensed);
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile .date-month {
+  font-family: var(--font-condensed);
+  font-size: clamp(1.4rem, 1.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.95;
+  margin-top: 8px;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .event-tags .tag-afdeling {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 2px 16px;
+  border-radius: 24px;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content h2 {
+  margin: 8px 0 0;
+  line-height: 1.1;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .post-meta-data {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .post-teaser {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
 .kalender-container .kalender-empty-state {
   background: #ffffff;
@@ -1880,6 +1940,78 @@ h1.nyheds-page {
   background: var(--dark-green);
 }
 
+.single-event-container {
+  padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
+}
+.single-event-container h1 {
+  margin: 16px 0 0 0;
+}
+.single-event-container .event-tags {
+  margin: 16px 0;
+}
+.single-event-container .event-tags .tag-afdeling {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 2px 16px;
+  border-radius: 24px;
+}
+.single-event-container .single-event-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.single-event-container .single-event-layout .single-event-featured-image img {
+  border-radius: 16px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card {
+  padding: 24px 24px 48px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card h3 {
+  margin: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list {
+  margin: 0px;
+  padding: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li {
+  list-style: none;
+  margin: 16px 0;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li p {
+  margin: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li .label {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+  color: var(--main-green);
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action {
+  margin-top: 24px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a {
+  background-color: var(--pop-color);
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: var(--standard-transition);
+}
+@media (hover: hover) {
+  .single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a:hover {
+    background-color: #7f1632;
+  }
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a:active {
+  transform: scale(0.95);
+}
+
 /* Responsive Styling for Mobile / Tablet */
 @media (max-width: 900px) {
   .kalender-container .kalender-filter-wrapper {
@@ -1903,36 +2035,26 @@ h1.nyheds-page {
     width: 100%;
     -webkit-overflow-scrolling: touch;
   }
+  .kalender-container .kalender-events-stream {
+    /* Remove old mobile overrides for now */
+  }
+  .single-event-container .single-event-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 500px) {
   .kalender-container .kalender-events-stream .kalender-card {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
-  .kalender-container .kalender-events-stream .kalender-card .card-date-tile {
-    width: 100%;
-    min-width: 100%;
-    flex-direction: row;
-    gap: 14px;
-    padding: 14px 20px;
-    justify-content: flex-start;
-  }
-  .kalender-container .kalender-events-stream .kalender-card .card-date-tile .date-day {
-    font-size: 2.2rem;
-  }
-  .kalender-container .kalender-events-stream .kalender-card .card-date-tile .date-month {
-    margin-top: 0;
-    font-size: 1.3rem;
-  }
-  .kalender-container .kalender-events-stream .kalender-card .card-body {
-    padding: 20px;
-  }
-  .kalender-container .kalender-events-stream .kalender-card .card-actions {
-    flex-direction: row;
-    border-left: none;
-    border-top: 1px solid #f0ede6;
-    padding: 18px 20px;
-    background: #ffffff;
-  }
-  .kalender-container .kalender-events-stream .kalender-card .card-actions a {
-    flex: 1;
+  .kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+    width: auto;
   }
 }
 

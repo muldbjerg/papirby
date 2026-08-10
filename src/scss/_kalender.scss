@@ -2,10 +2,12 @@
 
 .kalender-container {
   padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
 
   /* Hero Section */
   h1 {
-    text-align: left;
+    text-align: center;
     font-family: var(--font-fancy);
     color: var(--main-green);
   }
@@ -93,6 +95,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
+      margin: 0 auto;
 
       .pills-label {
         font-family: var(--font-condensed);
@@ -202,6 +205,7 @@
     flex-direction: column;
     gap: 24px;
 
+
     .month-divider {
       display: flex;
       align-items: center;
@@ -225,224 +229,115 @@
       }
     }
 
-    /* Event Card */
+    /* Event Card (Styled as News Post) */
     .kalender-card {
       display: grid;
-      background: #ffffff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
-      border: 1px solid #eae5dc;
-      padding: 20px;
-      transition: transform 0.25s cubic-bezier(0.2, 0.65, 0.6, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+      grid-template-columns: 1fr 4fr;
+      gap: 42px;
+      color: var(--main-text-color);
+      text-decoration: none;
+      transition: var(--standard-transition);
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
 
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-        border-color: #d4ccbe;
-      }
-      
 
-      h2{
-        margin: 0px;
-      }
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: none;
+          transform: none;
+          box-shadow: none;
 
-      .kalender-card-meta{
-        max-width: 800px;
-        clear:both;
-        margin-top: 24px;
-        padding: 24px 0;
-        border-top: 1px solid #eae5dc;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        .meta-point{
-          
-  
-          &-date{
-            text-transform: capitalize;
+          .post-thumbnail img, .post-thumbnail .fallback-date-tile {
+            transform: scale(1.025);
           }
         }
       }
 
+      .post-thumbnail {
+        width: 300px;
+        object-fit: cover;
 
-    
+        img, .fallback-date-tile {
+          width: 100%;
+          border-radius: 16px;
+          transition: var(--standard-transition);
+          display: block;
+        }
 
-      /* Date Tile */
-      // .card-date-tile {
-      //   display: flex;
-      //   flex-direction: column;
-      //   align-items: center;
-      //   justify-content: center;
-      //   width: 120px;
-      //   min-width: 120px;
-      //   background: linear-gradient(180deg, var(--dark-green) 0%, var(--main-green) 100%);
-      //   color: #ffffff;
-      //   padding: 20px 12px;
-      //   text-align: center;
+        .fallback-date-tile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background: linear-gradient(180deg, var(--dark-green) 0%, var(--main-green) 100%);
+          color: #ffffff;
+          aspect-ratio: 4 / 3;
+          
+          .date-day {
+            font-family: var(--font-condensed);
+            font-size: clamp(2rem, 4vw, 5rem);
+            // font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -1px;
+          }
 
-      //   .date-day {
-      //     font-family: var(--font-condensed);
-      //     font-size: 2.6rem;
-      //     font-weight: 700;
-      //     line-height: 1;
-      //     letter-spacing: -0.5px;
-      //   }
+          .date-month {
+            font-family: var(--font-condensed);
+            font-size: clamp(1.4rem, 1.4vw, 2rem);
+            // font-size: 1.4rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            opacity: 0.95;
+            margin-top: 8px;
+          }
+        }
+      }
 
-      //   .date-month {
-      //     font-family: var(--font-condensed);
-      //     font-size: 1.15rem;
-      //     font-weight: 700;
-      //     letter-spacing: 1.5px;
-      //     text-transform: uppercase;
-      //     opacity: 0.95;
-      //     margin-top: 6px;
-      //   }
-      // }
+      .post-content {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-      /* Card Body */
-      // .card-body {
-      //   flex: 1;
-      //   padding: 24px 28px;
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: center;
+        .event-tags{
+        
 
-      //   .card-tags {
-      //     display: flex;
-      //     flex-wrap: wrap;
-      //     gap: 8px;
-      //     margin-bottom: 10px;
+          .tag-afdeling{
+            background-color: rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            padding: 2px 16px;
+            border-radius: 24px;
+            font-family: var(--font-condensed);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin: 8px 0 0;
+          }
+        }
 
-      //     .tag {
-      //       font-size: 0.82rem;
-      //       font-weight: 700;
-      //       padding: 4px 12px;
-      //       border-radius: 20px;
-      //       text-transform: uppercase;
-      //       letter-spacing: 0.5px;
+        h2 {
+          margin: 8px 0 0;
+          line-height: 1.1;
+        }
 
-      //       &.tag-afdeling {
-      //         background: #e4f2ec;
-      //         color: var(--dark-green);
-      //       }
+        .post-meta-data {
+          font-family: var(--font-condensed);
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: 1px;
+          margin: 8px 0 0;
+        }
 
-      //       &.tag-kategori {
-      //         background: #fce8ed;
-      //         color: var(--pop-color);
-      //       }
-
-      //       &.tag-deadline {
-      //         background: #fff4e5;
-      //         color: #b86e00;
-      //       }
-      //     }
-      //   }
-
-      //   .card-title {
-      //     font-family: var(--font-fancy);
-      //     font-size: 1.9rem;
-      //     margin: 2px 0 10px 0;
-      //     line-height: 1.2;
-
-      //     a {
-      //       color: var(--main-text-color);
-      //       text-decoration: none;
-      //       transition: color 0.2s ease;
-
-      //       &:hover {
-      //         color: var(--main-green);
-      //       }
-      //     }
-      //   }
-
-      //   .card-meta {
-      //     display: flex;
-      //     flex-wrap: wrap;
-      //     gap: 20px;
-      //     font-size: 0.98rem;
-      //     color: var(--light-text-color);
-      //     margin-bottom: 12px;
-
-      //     .meta-point {
-      //       display: inline-flex;
-      //       align-items: center;
-      //       gap: 7px;
-      //       font-weight: 500;
-
-      //       svg {
-      //         color: var(--main-green);
-      //         flex-shrink: 0;
-      //       }
-      //     }
-      //   }
-
-      //   .card-teaser {
-      //     font-size: 1.05rem;
-      //     color: #4f4940;
-      //     line-height: 1.55;
-      //     margin: 0;
-      //   }
-      // }
-
-      /* Card Actions */
-      // .card-actions {
-      //   display: flex;
-      //   flex-direction: column;
-      //   justify-content: center;
-      //   gap: 12px;
-      //   padding: 24px 28px;
-      //   border-left: 1px solid #f0ede6;
-      //   min-width: 170px;
-      //   background: #faf8f5;
-
-      //   a {
-      //     display: inline-flex;
-      //     align-items: center;
-      //     justify-content: center;
-      //     padding: 12px 20px;
-      //     border-radius: 10px;
-      //     font-family: var(--font-condensed);
-      //     font-weight: 700;
-      //     font-size: 1.1rem;
-      //     text-decoration: none;
-      //     text-align: center;
-      //     transition: all 0.2s ease;
-
-      //     &.btn-primary-signup {
-      //       background: var(--main-green);
-      //       color: #ffffff;
-      //       gap: 8px;
-      //       box-shadow: 0 4px 12px rgba(6, 111, 76, 0.2);
-
-      //       &:hover {
-      //         background: var(--dark-green);
-      //         box-shadow: 0 6px 16px rgba(1, 71, 44, 0.3);
-      //         transform: translateY(-1px);
-      //       }
-
-      //       svg {
-      //         transition: transform 0.2s ease;
-      //       }
-
-      //       &:hover svg {
-      //         transform: translateX(3px);
-      //       }
-      //     }
-
-      //     &.btn-secondary-details {
-      //       background: #ffffff;
-      //       color: var(--main-text-color);
-      //       border: 1px solid #dcd6c8;
-
-      //       &:hover {
-      //         background: #f0ede6;
-      //         color: var(--dark-green);
-      //         border-color: #c4bcae;
-      //       }
-      //     }
-      //   }
-      // }
+        .post-teaser {
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+        }
+      }
     }
   }
 
@@ -495,6 +390,99 @@
   }
 }
 
+
+.single-event-container{
+  padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
+
+  h1{
+    margin: 16px 0 0 0;
+  }
+
+  .event-tags{
+    margin: 16px 0;
+
+    .tag-afdeling{
+      background-color: rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      padding: 2px 16px;
+      border-radius: 24px;
+    }
+  }
+    
+  .single-event-layout{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+
+    .single-event-featured-image img{
+      border-radius: 16px;
+    }
+
+    .single-event-sidebar{
+    
+     .event-info-card{
+        padding: 24px 24px 48px;
+        background-color: #fff;
+        border-radius: 16px;
+
+        h3{
+          margin: 0px;
+        }
+
+        .event-info-list{
+          margin: 0px;
+          padding: 0px;
+
+          li{
+            list-style: none;
+            margin: 16px 0;
+
+            p{
+              margin: 0px;
+            }
+
+            .label{
+              font-family: var(--font-condensed);
+              text-transform: uppercase;
+              font-size: 1rem;
+              letter-spacing: 1px;
+              margin: 8px 0 0;
+              color: var(--main-green);
+            }
+          }
+        }
+
+        .sidebar-signup-action{
+          margin-top: 24px;
+
+          a {
+            background-color: var(--pop-color);
+            color: #fff;
+            padding: 7px 12px;
+            border-radius: 32px;
+            text-decoration: none;
+
+            transition: var(--standard-transition);
+
+            @media (hover: hover) {
+              &:hover {
+                background-color: #7f1632;
+              }
+            }
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 /* Responsive Styling for Mobile / Tablet */
 @media (max-width: 900px) {
   .kalender-container {
@@ -525,40 +513,41 @@
     }
 
     .kalender-events-stream {
+      /* Remove old mobile overrides for now */
+    }
+    
+  }
+
+  .single-event-container{
+    .single-event-layout{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .kalender-container {
+    .kalender-events-stream {
       .kalender-card {
-        flex-direction: column;
-
-        .card-date-tile {
-          width: 100%;
-          min-width: 100%;
-          flex-direction: row;
-          gap: 14px;
-          padding: 14px 20px;
-          justify-content: flex-start;
-
-          .date-day {
-            font-size: 2.2rem;
-          }
-          .date-month {
-            margin-top: 0;
-            font-size: 1.3rem;
-          }
+        .post-thumbnail {
+          width: 120px;
         }
+      }
+    }
+  }
+}
 
-        .card-body {
-          padding: 20px;
-        }
+@media only screen and (max-width: 500px) {
+  .kalender-container {
+    .kalender-events-stream {
+      .kalender-card {
+        grid-template-columns: 1fr;
 
-        .card-actions {
-          flex-direction: row;
-          border-left: none;
-          border-top: 1px solid #f0ede6;
-          padding: 18px 20px;
-          background: #ffffff;
-
-          a {
-            flex: 1;
-          }
+        .post-thumbnail {
+          width: auto;
         }
       }
     }

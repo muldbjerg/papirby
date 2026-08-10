@@ -576,7 +576,7 @@ function papirby_register_acf_field_groups() {
 			'key' => 'field_begivenhed_kontaktperson',
 			'label' => 'Kontaktperson',
 			'name' => 'kontaktperson',
-			'type' => 'text',
+			'type' => 'wysiwyg',
 			'instructions' => 'Navn, e-mail eller telefonnummer på den ansvarlige leder',
 			'required' => 0,
 		),

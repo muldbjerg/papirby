@@ -146,139 +146,43 @@ $current_page_url = strtok($_SERVER["REQUEST_URI"], '?');
                 <?php endif; ?>
 
                 <!-- Event Card -->
-                <article class="kalender-card">
-                    <div class="kalender-card-header">
-                        <h2 class="card-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h2>
-                        
-                        <p class="card-teaser">
-                            <?php echo wp_trim_words(get_the_excerpt() ? get_the_excerpt() : get_the_content(), 28, '...'); ?>
-                        </p>
-                    </div>
-
-                    <div class="kalender-card-meta">
-                        <?php if ($tidspunkt_tekst) : ?>
-                            <span class="meta-point meta-point-date">
-                                <b>Dato: </b>
-                                <?php echo esc_html($tidspunkt_tekst); ?> 
-                            </span>
-                        <?php elseif ($time_str && $time_str !== '00:00') : ?>
-                            <span class="meta-point meta-point-date">
-                                <b>Dato: </b>
-                                <span class="date-day"><?php echo esc_html($day_display); ?>.</span>
+                <a href="<?php the_permalink(); ?>" class="kalender-card">
+                    <div class="post-thumbnail">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('medium'); ?>
+                        <?php else : ?>
+                            <div class="fallback-date-tile">
+                                <span class="date-day"><?php echo esc_html($day_display); ?></span>
                                 <span class="date-month"><?php echo esc_html($month_short); ?></span>
-                                <?php echo esc_html($tidspunkt_tekst); ?> - <?php echo esc_html($time_str); ?>
-                            </span>
-                        <?php endif; ?>
-
-                        <?php if ($location) : ?>
-                            <span class="meta-point">
-                                <b>Sted: </b>
-                                <?php echo esc_html($location); ?>
-                            </span>
-                        <?php endif; ?>
-
-                        <?php if (!empty($event_afdelinger) && !is_wp_error($event_afdelinger)) : ?>
-                             <span class="meta-point">
-                                <b>afdeling: </b>
-                                <?php foreach ($event_afdelinger as $afdel) : ?>
-                                    <span class="tag tag-afdeling"><?php echo esc_html($afdel->name); ?></span>
-                                <?php endforeach; ?>
-                            </span>
+                            </div>
                         <?php endif; ?>
                     </div>
-
-                    <div class="kalender-card-links">
-                        <?php if ($tilmeldings_link) : ?>
-                            <a href="<?php echo esc_url($tilmeldings_link); ?>" target="_blank" rel="noopener" class="btn-primary-signup">
-                                <span>Tilmelding</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                            </a>
-                        <?php endif; ?>
-
-                        <a href="<?php the_permalink(); ?>" class="btn-secondary-details">Læs mere</a>
-                    </div>
-
-
-
-                    <!-- Left: Date Tile -->
-                    <!-- <div class="card-date-tile">
-                        <span class="date-day"><?php echo esc_html($day_display); ?></span>
-                        <span class="date-month"><?php echo esc_html($month_short); ?></span>
-                    </div> -->
-
-                    <!-- Middle: Details -->
-                    <!-- <div class="card-body">
-                        <div class="card-tags">
+                    
+                    <div class="post-content">
+                        <div class="event-tags">
                             <?php if (!empty($event_afdelinger) && !is_wp_error($event_afdelinger)) : ?>
                                 <?php foreach ($event_afdelinger as $afdel) : ?>
                                     <span class="tag tag-afdeling"><?php echo esc_html($afdel->name); ?></span>
                                 <?php endforeach; ?>
                             <?php endif; ?>
-
-                            <?php if (!empty($event_kategorier) && !is_wp_error($event_kategorier)) : ?>
-                                <?php foreach ($event_kategorier as $kat) : ?>
-                                    <span class="tag tag-kategori"><?php echo esc_html($kat->name); ?></span>
-                                <?php endforeach; ?>
-                            <?php endif; ?>
-
-                            <?php if ($frist_display) : ?>
-                                <span class="tag tag-deadline">Tilmeldingsfrist: <?php echo esc_html($frist_display); ?></span>
-                            <?php endif; ?>
                         </div>
-
-                        <h3 class="card-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h3>
-
-                        <div class="card-meta">
+                        <h2><?php the_title(); ?></h2>
+                        <p class="post-meta-data">
                             <?php if ($tidspunkt_tekst) : ?>
-                                <span class="meta-point">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                    <?php echo esc_html($tidspunkt_tekst); ?>
-                                </span>
-                            <?php elseif ($time_str && $time_str !== '00:00') : ?>
-                                <span class="meta-point">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                                    Kl. <?php echo esc_html($time_str); ?>
-                                </span>
+                                <?php echo esc_html($tidspunkt_tekst); ?> 
+                            <?php else : ?>
+                                <?php echo esc_html($day_display); ?>. <?php echo esc_html(strtolower($month_short)); ?> <?php echo esc_html($year_num); ?>
+                                <?php if ($time_str && $time_str !== '00:00') echo ' - Kl. ' . esc_html($time_str); ?>
                             <?php endif; ?>
-
                             <?php if ($location) : ?>
-                                <span class="meta-point">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                                    <?php echo esc_html($location); ?>
-                                </span>
+                                | <?php echo esc_html($location); ?>
                             <?php endif; ?>
-
-                            <?php if ($pris) : ?>
-                                <span class="meta-point">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                                    <?php echo esc_html($pris); ?>
-                                </span>
-                            <?php endif; ?>
+                        </p>
+                        <div class="post-teaser">
+                            <?php echo wp_trim_words(get_the_excerpt() ? get_the_excerpt() : get_the_content(), 28, '...'); ?>
                         </div>
-
-                        <?php if (has_excerpt() || get_the_content()) : ?>
-                            <p class="card-teaser">
-                                <?php echo wp_trim_words(get_the_excerpt() ? get_the_excerpt() : get_the_content(), 28, '...'); ?>
-                            </p>
-                        <?php endif; ?>
-                    </div> -->
-
-                    <!-- Right: Action Buttons -->
-                    <!-- <div class="card-actions">
-                        <?php if ($tilmeldings_link) : ?>
-                            <a href="<?php echo esc_url($tilmeldings_link); ?>" target="_blank" rel="noopener" class="btn-primary-signup">
-                                <span>Tilmelding</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                            </a>
-                        <?php endif; ?>
-
-                        <a href="<?php the_permalink(); ?>" class="btn-secondary-details">Læs mere</a>
-                    </div> -->
-                </article>
+                    </div>
+                </a>
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
         <?php else : ?>
