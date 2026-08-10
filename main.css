@@ -1607,5 +1607,455 @@ h1.nyheds-page {
     grid-template-columns: 1fr;
   }
 }
+/* KALENDER & BEGIVENHEDER - STYLES MATCHING KFUMSPEJDERNE.DK */
+.kalender-container {
+  padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
+  /* Hero Section */
+  /* Filter Control Wrapper */
+  /* Month Divider Headers */
+  /* Empty State */
+}
+.kalender-container h1 {
+  text-align: center;
+  font-family: var(--font-fancy);
+  color: var(--main-green);
+}
+.kalender-container .afdeling-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.kalender-container .afdeling-content .afdeling-text {
+  max-width: 600px;
+}
+.kalender-container .kalender-filter-wrapper {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Search & Category Dropdowns */
+  /* Filter Pills / Chips */
+  /* Sub Filter (Tabs & Reset) */
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group svg {
+  position: absolute;
+  left: 16px;
+  color: var(--main-green);
+  pointer-events: none;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group input[type=text] {
+  width: 100%;
+  padding: 12px 40px 12px 48px;
+  border: 2px solid #e2ddd3;
+  border-radius: 30px;
+  background: #faf8f5;
+  font-family: var(--font-normal);
+  font-size: 1.05rem;
+  color: var(--main-text-color);
+  transition: all 0.2s ease;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group input[type=text]:focus {
+  outline: none;
+  border-color: var(--main-green);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(6, 111, 76, 0.1);
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group input[type=text]::placeholder {
+  color: #9a9284;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group .clear-search {
+  position: absolute;
+  right: 16px;
+  font-size: 1.4rem;
+  color: #999;
+  text-decoration: none;
+  line-height: 1;
+}
+.kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group .clear-search:hover {
+  color: var(--pop-color);
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-label {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--dark-green);
+  white-space: nowrap;
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-scroll-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-scroll-container .pill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: #f0ede6;
+  color: var(--main-text-color);
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.2, 0.65, 0.6, 1);
+  border: 1px solid transparent;
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-scroll-container .pill-chip:hover {
+  background: #e2ddd3;
+  color: var(--dark-green);
+}
+.kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-scroll-container .pill-chip.active {
+  background: var(--dark-green);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(1, 71, 44, 0.25);
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0ede6;
+  padding-top: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .toggle-past-tabs {
+  display: flex;
+  gap: 20px;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .toggle-past-tabs .tab-link {
+  font-family: var(--font-condensed);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--light-text-color);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .toggle-past-tabs .tab-link:hover {
+  color: var(--main-green);
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .toggle-past-tabs .tab-link.active {
+  color: var(--main-green);
+  font-weight: 700;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .toggle-past-tabs .tab-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--main-green);
+  border-radius: 2px;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .btn-reset-all {
+  font-size: 0.95rem;
+  color: var(--pop-color);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.kalender-container .kalender-filter-wrapper .kalender-sub-filter .btn-reset-all:hover {
+  color: darkred;
+}
+.kalender-container .kalender-events-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* Event Card (Styled as News Post) */
+}
+.kalender-container .kalender-events-stream .month-divider {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 24px 0 8px 0;
+}
+.kalender-container .kalender-events-stream .month-divider h2 {
+  font-family: var(--font-fancy);
+  font-size: 1.8rem;
+  color: var(--dark-green);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+.kalender-container .kalender-events-stream .month-divider .divider-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #d8d2c6 0%, rgba(216, 210, 198, 0) 100%);
+}
+.kalender-container .kalender-events-stream .kalender-card {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 42px;
+  color: var(--main-text-color);
+  text-decoration: none;
+  transition: var(--standard-transition);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+@media (hover: hover) {
+  .kalender-container .kalender-events-stream .kalender-card:hover {
+    text-decoration: none;
+    transform: none;
+    box-shadow: none;
+  }
+  .kalender-container .kalender-events-stream .kalender-card:hover .post-thumbnail img, .kalender-container .kalender-events-stream .kalender-card:hover .post-thumbnail .fallback-date-tile {
+    transform: scale(1.025);
+  }
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+  width: 300px;
+  object-fit: cover;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail img, .kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile {
+  width: 100%;
+  border-radius: 16px;
+  transition: var(--standard-transition);
+  display: block;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, var(--dark-green) 0%, var(--main-green) 100%);
+  color: #ffffff;
+  aspect-ratio: 4/3;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile .date-day {
+  font-family: var(--font-condensed);
+  font-size: clamp(2rem, 4vw, 5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-thumbnail .fallback-date-tile .date-month {
+  font-family: var(--font-condensed);
+  font-size: clamp(1.4rem, 1.4vw, 2rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.95;
+  margin-top: 8px;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .event-tags .tag-afdeling {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 2px 16px;
+  border-radius: 24px;
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content h2 {
+  margin: 8px 0 0;
+  line-height: 1.1;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .post-meta-data {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+}
+.kalender-container .kalender-events-stream .kalender-card .post-content .post-teaser {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+.kalender-container .kalender-empty-state {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 60px 30px;
+  text-align: center;
+  border: 2px dashed #e0d9cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.kalender-container .kalender-empty-state svg {
+  color: #b0a898;
+  margin-bottom: 8px;
+}
+.kalender-container .kalender-empty-state h3 {
+  font-family: var(--font-fancy);
+  font-size: 2rem;
+  color: var(--dark-green);
+  margin: 0;
+}
+.kalender-container .kalender-empty-state p {
+  font-size: 1.15rem;
+  color: var(--light-text-color);
+  max-width: 500px;
+  margin: 0;
+}
+.kalender-container .kalender-empty-state .btn-reset-empty {
+  margin-top: 12px;
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--main-green);
+  color: #fff;
+  border-radius: 8px;
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  text-decoration: none;
+}
+.kalender-container .kalender-empty-state .btn-reset-empty:hover {
+  background: var(--dark-green);
+}
+
+.single-event-container {
+  padding: 40px 0 80px 0;
+  max-width: 1000px;
+  margin: 100px auto 0;
+}
+.single-event-container h1 {
+  margin: 16px 0 0 0;
+}
+.single-event-container .event-tags {
+  margin: 16px 0;
+}
+.single-event-container .event-tags .tag-afdeling {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 2px 16px;
+  border-radius: 24px;
+}
+.single-event-container .single-event-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+.single-event-container .single-event-layout .single-event-featured-image img {
+  border-radius: 16px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card {
+  padding: 24px 24px 48px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card h3 {
+  margin: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list {
+  margin: 0px;
+  padding: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li {
+  list-style: none;
+  margin: 16px 0;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li p {
+  margin: 0px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .event-info-list li .label {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 8px 0 0;
+  color: var(--main-green);
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action {
+  margin-top: 24px;
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a {
+  background-color: var(--pop-color);
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: var(--standard-transition);
+}
+@media (hover: hover) {
+  .single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a:hover {
+    background-color: #7f1632;
+  }
+}
+.single-event-container .single-event-layout .single-event-sidebar .event-info-card .sidebar-signup-action a:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Styling for Mobile / Tablet */
+@media (max-width: 900px) {
+  .kalender-container .kalender-filter-wrapper {
+    padding: 18px 20px;
+  }
+  .kalender-container .kalender-filter-wrapper .kalender-search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .kalender-container .kalender-filter-wrapper .kalender-search-form .search-input-group, .kalender-container .kalender-filter-wrapper .kalender-search-form .filter-dropdown-group select {
+    width: 100%;
+  }
+  .kalender-container .kalender-filter-wrapper .kalender-pills-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-scroll-container {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .kalender-container .kalender-events-stream {
+    /* Remove old mobile overrides for now */
+  }
+  .single-event-container .single-event-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+    width: 120px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .kalender-container .kalender-events-stream .kalender-card {
+    grid-template-columns: 1fr;
+  }
+  .kalender-container .kalender-events-stream .kalender-card .post-thumbnail {
+    width: auto;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
