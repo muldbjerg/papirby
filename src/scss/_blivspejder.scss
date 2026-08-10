@@ -133,8 +133,9 @@
 }
 
 #bliv-spejder-enheds-oversigt-container {
-  @include columns;
   margin-top: 160px;
+
+  @include columns;
 }
 
 .bliv-spejder-enheds-oversigt-photo-credits {
@@ -148,7 +149,6 @@
 }
 
 // ENHEDS CARD
-
 .enheds-card {
   position: relative;
   background-position: center center;

@@ -1128,10 +1128,10 @@ body:not(.home) .nav-menu > li:last-child a:active {
 }
 
 #bliv-spejder-enheds-oversigt-container {
+  margin-top: 160px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2em;
-  margin-top: 160px;
 }
 @media only screen and (max-width: 1200px) {
   #bliv-spejder-enheds-oversigt-container {
@@ -1607,7 +1607,7 @@ h1.nyheds-page {
     grid-template-columns: 1fr;
   }
 }
-/* KALENDER & BEGIVENHEDER - STYLES MATCHING KFUMSPEJDERNE.DK */
+/* KALENDER & BEGIVENHEDER  */
 .kalender-container {
   padding: 40px 0 80px 0;
   max-width: 1000px;
@@ -1636,7 +1636,7 @@ h1.nyheds-page {
   flex-direction: column;
   gap: 20px;
   /* Search & Category Dropdowns */
-  /* Filter Pills / Chips */
+  /* Filter Pills */
   /* Sub Filter (Tabs & Reset) */
 }
 .kalender-container .kalender-filter-wrapper .kalender-search-form {
