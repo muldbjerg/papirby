@@ -1630,11 +1630,18 @@ h1.nyheds-page {
 .kalender-container .afdeling-content .afdeling-text {
   max-width: 600px;
 }
+.kalender-container .kalender-content {
+  text-align: center;
+  max-width: 570px;
+  margin: 0 auto;
+}
 .kalender-container .kalender-filter-wrapper {
   margin-bottom: 48px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
+  justify-content: space-between;
+  margin-top: 40px;
   /* Search & Category Dropdowns */
   /* Filter Pills */
   /* Sub Filter (Tabs & Reset) */
@@ -1694,7 +1701,6 @@ h1.nyheds-page {
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin: 0 auto;
 }
 .kalender-container .kalender-filter-wrapper .kalender-pills-bar .pills-label {
   font-family: var(--font-condensed);
@@ -2016,6 +2022,7 @@ h1.nyheds-page {
 @media (max-width: 900px) {
   .kalender-container .kalender-filter-wrapper {
     padding: 18px 20px;
+    flex-direction: column;
   }
   .kalender-container .kalender-filter-wrapper .kalender-search-form {
     flex-direction: column;

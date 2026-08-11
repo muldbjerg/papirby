@@ -22,12 +22,20 @@
     }
   }
 
+  .kalender-content{ 
+    text-align: center;
+    max-width: 570px;
+    margin: 0 auto;
+  }
+
   /* Filter Control Wrapper */
   .kalender-filter-wrapper {
     margin-bottom: 48px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    justify-content: space-between;
+    margin-top: 40px;
 
     /* Search & Category Dropdowns */
     .kalender-search-form {
@@ -95,7 +103,6 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin: 0 auto;
 
       .pills-label {
         font-family: var(--font-condensed);
@@ -486,6 +493,7 @@
   .kalender-container {
     .kalender-filter-wrapper {
       padding: 18px 20px;
+      flex-direction: column;
 
       .kalender-search-form {
         flex-direction: column;

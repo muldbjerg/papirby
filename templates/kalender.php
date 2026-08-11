@@ -61,19 +61,7 @@ $current_page_url = strtok($_SERVER["REQUEST_URI"], '?');
 
     <!-- Filter Control Bar -->
     <div class="kalender-filter-wrapper">
-        <form method="GET" action="" class="kalender-search-form">
-            <?php if (!empty($selected_afdeling)) : ?><input type="hidden" name="afdeling" value="<?php echo esc_attr($selected_afdeling); ?>"><?php endif; ?>
-            <?php if ($show_past) : ?><input type="hidden" name="vis" value="tidligere"><?php endif; ?>
-
-            <div class="search-input-group">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" name="q" value="<?php echo esc_attr($search_query); ?>" placeholder="Søg i arrangementer..." />
-                <?php if (!empty($search_query)) : ?>
-                    <a href="<?php echo esc_url(remove_query_arg('q')); ?>" class="clear-search" title="Ryd søgning">&times;</a>
-                <?php endif; ?>
-            </div>
-        </form>
-
+    
         <!-- Afdeling Filter Pills -->
         <div class="kalender-pills-bar">
             <div class="pills-scroll-container">
@@ -89,6 +77,19 @@ $current_page_url = strtok($_SERVER["REQUEST_URI"], '?');
                 <?php endif; ?>
             </div>
         </div>
+
+        <form method="GET" action="" class="kalender-search-form">
+            <?php if (!empty($selected_afdeling)) : ?><input type="hidden" name="afdeling" value="<?php echo esc_attr($selected_afdeling); ?>"><?php endif; ?>
+            <?php if ($show_past) : ?><input type="hidden" name="vis" value="tidligere"><?php endif; ?>
+
+            <div class="search-input-group">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" name="q" value="<?php echo esc_attr($search_query); ?>" placeholder="Søg i arrangementer..." />
+                <?php if (!empty($search_query)) : ?>
+                    <a href="<?php echo esc_url(remove_query_arg('q')); ?>" class="clear-search" title="Ryd søgning">&times;</a>
+                <?php endif; ?>
+            </div>
+        </form>
 
         <!-- Sub Filter (Tabs & Reset) -->
         <!-- <div class="kalender-sub-filter">
